@@ -18,7 +18,13 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField "String", "SERVER_ADDRESS", "\"192.168.56.1:8080\""
+        }
+
         release {
+            buildConfigField "String", "SERVER_ADDRESS", "\"192.168.56.1:8080\""
+
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -44,7 +50,9 @@ dependencies {
     implementation "com.facebook.litho:litho-widget:0.34.0"
     kapt "com.facebook.litho:litho-processor:0.34.0"
     implementation "com.facebook.soloader:soloader:0.5.1"
+    implementation 'com.facebook.fbjni:fbjni:0.0.2'
     implementation "com.squareup.okhttp3:okhttp:4.4.0"
+    implementation 'com.google.code.gson:gson:2.8.6'
 
     testImplementation "junit:junit:4.12"
     androidTestImplementation "androidx.test.ext:junit:1.1.1"

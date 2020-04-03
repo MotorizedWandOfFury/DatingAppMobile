@@ -8,14 +8,16 @@ import com.facebook.litho.annotations.OnCreateLayout
 import com.facebook.litho.widget.Text
 
 @LayoutSpec
-class UserSpec {
+class LoadingSpec {
     companion object {
         @JvmStatic
         @OnCreateLayout
         fun onCreateLayout(context: ComponentContext): Component {
             return Row.create(context)
                 .child(
-                    Text.create(context).text("UserComponent").textSizeDip(50F)
+                    Text.create(context)
+                        .text("Loading...")
+                        .textSizeDip(50F)
                 ).build()
         }
     }
