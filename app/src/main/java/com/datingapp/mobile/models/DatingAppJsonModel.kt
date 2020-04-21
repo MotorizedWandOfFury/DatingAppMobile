@@ -10,7 +10,7 @@ data class Action(
     val fields: List<Field>
 )
 
-data class Link(val rel: String, val href: String)
+data class Link(val rel: String, val href: String, val label: String?)
 
 data class DatingAppJsonModel(
     val type: String,
